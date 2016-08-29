@@ -1,4 +1,4 @@
-package io.haru.dummer.spring.domain;
+package io.haru.dummer.spring.domain.master;
 
 import lombok.Data;
 
@@ -13,18 +13,15 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
-public class ClientAdmin {
+public class ClientRedirectUri {
     @Id
     @GeneratedValue
     @Column(nullable = false)
     private Long id;
 
     @Column(nullable = false)
-    private Long clientId;
+    private String clientId;
 
-    @Column(nullable = false)
-    private Long userId;
-
-    @Column(length = 3)
-    private String clientAdminTypeCode;
+    @Column(length = 100)
+    private String allowedRedirectUri;
 }

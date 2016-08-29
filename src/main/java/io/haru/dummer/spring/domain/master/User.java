@@ -1,4 +1,4 @@
-package io.haru.dummer.spring.domain;
+package io.haru.dummer.spring.domain.master;
 
 import lombok.Data;
 

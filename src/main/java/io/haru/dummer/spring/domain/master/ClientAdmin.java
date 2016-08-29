@@ -1,4 +1,4 @@
-package io.haru.dummer.spring.domain;
+package io.haru.dummer.spring.domain.master;
 
 import lombok.Data;
 
@@ -13,17 +13,18 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
-public class Client {
+public class ClientAdmin {
     @Id
     @GeneratedValue
     @Column(nullable = false)
     private Long id;
 
-    @Column(length = 50)
-    private String appId;
+    @Column(nullable = false)
+    private Long clientId;
 
-    @Column(length = 50)
-    private String appSecret;
+    @Column(nullable = false)
+    private Long userId;
 
-    // client application 등록을 위한 기타 정보
+    @Column(length = 3)
+    private String clientAdminTypeCode;
 }
