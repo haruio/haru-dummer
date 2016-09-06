@@ -13,7 +13,7 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
-public class User {
+public class User extends CommonDomain {
     @Id
     @GeneratedValue
     @Column(nullable = false)

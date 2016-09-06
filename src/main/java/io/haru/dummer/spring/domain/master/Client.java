@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Data
 @Entity
-public class Client {
+public class Client extends CommonDomain {
     @Id
     @GeneratedValue
     @Column(nullable = false)

@@ -2,10 +2,8 @@ package io.haru.dummer.spring.domain.master;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * @author Justin Park (aka.asterisk@gmail.com)
@@ -13,7 +11,7 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
-public class UserDevice {
+public class UserDevice extends CommonDomain {
     @Id
     @GeneratedValue
     @Column(nullable = false)
