@@ -2,10 +2,7 @@ package io.haru.dummer.spring.domain.master;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author Justin Park (aka.asterisk@gmail.com)
@@ -30,4 +27,7 @@ public class ClientAuth {
 
     @Column(length = 100, nullable = false)
     private String refreshToken;
+
+    @Lob
+    private String scopes;
 }

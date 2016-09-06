@@ -19,9 +19,6 @@ public class User {
     @Column(nullable = false)
     private Long id;
 
-    @Column
-    private Long userAuthId;
-
     @Column(length = 50, nullable = false)
     private String username;
 
