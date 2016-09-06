@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication()
             .withUser("user")
             .password("test")
-            .roles("ROLE_USER");
+            .roles("USER");
     }
 
     @Override

@@ -20,12 +20,18 @@ public class ResourServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
-            .requestMatchers()
-            .antMatchers("/me")
-            .and()
             .authorizeRequests()
-            .anyRequest()
-            .authenticated();
+            .antMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN")
+            .antMatchers("/users/**").hasAnyAuthority("ROLE_USER")
+            .anyRequest().permitAll()
+            //.anyRequest().authenticated()
+            .and()
+                .formLogin()
+                .permitAll()
+            .and()
+                .logout()
+                .permitAll()
+            ;
     }
 
     @Override

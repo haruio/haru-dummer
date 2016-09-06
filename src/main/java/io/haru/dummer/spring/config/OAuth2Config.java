@@ -20,8 +20,8 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     private String resourceId;
 
     private String clientName = "haru-dummer-oauth";
-    private String[] authorities = new String[] {"ROLE_USER"};
-    private String[] scopes = new String[] {"user_public"};
+    private String[] authorities = new String[] {"ROLE_USER", "ROLE_CLIENT_ADMIN"};
+    private String[] scopes = new String[] {"read"};
     private String[] redirectUris = new String[] {"http://localhost:8080"};
 
     @Autowired
@@ -36,11 +36,11 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
             .withClient(clientName)
-            .authorizedGrantTypes("authorization_code", "refresh_token")
+            .authorizedGrantTypes("password", "authorization_code", "refresh_token")
             .authorities(authorities)
             .scopes(scopes)
             .resourceIds(resourceId)
             .redirectUris(redirectUris)
-            .accessTokenValiditySeconds(60);
+            .accessTokenValiditySeconds(3600);
     }
 }
