@@ -20,7 +20,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     private String resourceId;
 
     private String clientName = "haru-dummer-oauth";
-    private String[] authorities = new String[] {"ROLE_USER", "ROLE_CLIENT_ADMIN"};
+    private String[] authorities = new String[] {"USER", "CLIENT_ADMIN"};
     private String[] scopes = new String[] {"read"};
     private String[] redirectUris = new String[] {"http://localhost:8080"};
 
