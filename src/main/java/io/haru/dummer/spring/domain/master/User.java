@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * @author Justin Park (aka.asterisk@gmail.com)
@@ -13,7 +14,7 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
-public class User extends CommonDomain {
+public class User extends CommonDomain implements Serializable {
     @Id
     @GeneratedValue
     @Column(nullable = false)
